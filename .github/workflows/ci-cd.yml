@@ -1,0 +1,19 @@
+name: Meu Primeiro CI/CD
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositório
+        uses: actions/checkout@v3
+
+      - name: Configurar ambiente
+        run: echo "Preparando o ambiente CI/CD..."
+
+      - name: Tornar o script executável
+        run: chmod +x script.sh
+
+      - name: Executar script
+        run: ./script.sh
